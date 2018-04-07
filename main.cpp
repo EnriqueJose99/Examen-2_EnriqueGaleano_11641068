@@ -45,10 +45,7 @@ int main(){
         bool bandera = true;
         int o = 0;
         des = pila->desapilar();
-        cout<<"El tope es: "<<des<<endl;
         while(pila->tope()!= NULL){
-          //cout<<"Entro"<<endl;
-          des = pila->desapilar();
           if (des->getCharacter()=='1'||des->getCharacter()=='2'||des->getCharacter()=='3'||des->getCharacter()=='4'||des->getCharacter()=='5'
             ||des->getCharacter()=='6'||des->getCharacter()=='7'||des->getCharacter()=='8'||des->getCharacter()=='9') {
             if (bandera) {

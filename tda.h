@@ -9,13 +9,12 @@ using namespace std;
 class TDA{
 public:
   CLASE2 *puntero;
-
   TDA();
   TDA(CLASE2*);
-  void apilar(CLASE2*);
-  string desapilar();
-  string tope();
-  string estaVacia();
+  void apilar(char);
+  CLASE2* desapilar();
+  CLASE2* tope();
+  bool estaVacia();
 
 };
 #endif

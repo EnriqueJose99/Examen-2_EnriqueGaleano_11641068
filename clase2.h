@@ -8,7 +8,12 @@ using namespace std;
 class CLASE2{
 public:
   CLASE2 *puntero;
-  char num;
-  void setPuntero(CLASE2);
+  CLASE2* dire;
+  char character;
+  CLASE2();
+  CLASE2(char);
+  char getCharacter();
+  void setDirr(CLASE2*);
+  CLASE2* getDire();
 };
 #endif

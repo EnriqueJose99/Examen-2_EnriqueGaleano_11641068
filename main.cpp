@@ -31,7 +31,7 @@ int main(){
         }else{
           cout<<"Esta llena la pila"<<endl;
         }
-        des = pila->desapilar();
+
         cout<<"El tope es: "<<des->getCharacter()<<endl;
         int cont = 0;
         char num1 = ' ';
@@ -41,29 +41,40 @@ int main(){
         int resultado = 0;
         char operador = ' ';
         int numeros = 0;
+        int result = 0;
+        bool bandera = true;
+        int o = 0;
+        des = pila->desapilar();
+        cout<<"El tope es: "<<des<<endl;
         while(pila->tope()!= NULL){
+          //cout<<"Entro"<<endl;
+          des = pila->desapilar();
           if (des->getCharacter()=='1'||des->getCharacter()=='2'||des->getCharacter()=='3'||des->getCharacter()=='4'||des->getCharacter()=='5'
             ||des->getCharacter()=='6'||des->getCharacter()=='7'||des->getCharacter()=='8'||des->getCharacter()=='9') {
-            if (cont == 0) {
-              num1 = des->getCharacter();
-              cont++;
+            if (bandera) {
+              result = des->getCharacter()-48;
+              bandera = false;
               numeros++;
             }else{
-              num2 = des->getCharacter();
-              cont=0;
-              numeros++;
+              o = des->getCharacter()-48;
+              if (operador == '+') {
+                result = o + result;
+              }
+              if (operador == '-') {
+                /* code */
+                result = o- result;
+              }
+              if (operador == '*') {
+                /* code */
+                result = o * result;
+              }
+              if (operador == '/') {
+                /* code */
+                result = o / result;
+              }
             }
-          }
-          if (des->getCharacter()=='+'||des->getCharacter()=='-'||des->getCharacter()=='*'||des->getCharacter()=='/') {
-            operador  = des->getCharacter();
-            numeros++;
-          }
-          if (numeros == 2) {
-            if (resultado == 0) {
-              num1Entero = (int)num1-'0';
-              num2Entero = (int)num2-'0';
-              resultado = num1Entero + num2Entero;
-            }
+          }else {
+            operador = des->getCharacter();
           }
         }
         cout<<resultado<<endl;
